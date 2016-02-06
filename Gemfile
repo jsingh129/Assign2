@@ -47,5 +47,8 @@ group :development do
   gem "chartkick"
   gem "groupdate"
   gem "active_median"
+  
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
