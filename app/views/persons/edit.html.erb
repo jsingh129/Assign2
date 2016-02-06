@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create</title> <!-- title to be displayed on browser tab -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div id="header">
+  <h1>Personnel - Open Database</h1>
+  </div>
+
+  <div id="buttons">
+    <p class="animate_button button_color"><%= link_to 'Home', controller: 'welcome' %></p>
+    <p class="animate_button button_color"><%= link_to 'List', controller: 'persons' %></p>
+    <p class="animate_button button_color"><%= link_to 'Create', new_person_path %></p>
+  </div>
+
+  <div id="canvas">
+    <p class="text_format"> Edit Details </p>
+    <%= form_for :person, url: person_path(@person), method: :patch do |f| %>
+        <p class="form_text">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+        </p>
+        <p class="form_text">
+            <%= f.label :weight %><br>
+            <%= f.text_field :weight %>
+        </p>
+        <p class="form_text">
+            <%= f.label :height %><br>
+            <%= f.text_field :height %>
+        </p>
+        <p class="form_text">
+            <%= f.label :color %><br>
+            <%= f.text_field :color %>
+        </p>
+        <p class="form_text">
+            <%= f.label :gender %><br>
+            <%= f.select :gender, [['Male','male'],['Female','female']] %>
+        </p>
+        <p class="form_text">
+            <%= f.label :age %><br>
+            <%= f.text_field :age %>
+        </p>
+        <p class="form_text">
+            <%= f.label :car_brand %><br>
+            <%= f.text_field :car_brand %>
+        </p>
+        <p class="form_text">
+            <%= f.label :game %><br>
+            <%= f.text_field :game %>
+        </p>
+        <p class="form_text">
+            <%= f.submit 'Save', :class => 'animate_button button_color' %>
+        </p>
+        <% end %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create</title> <!-- title to be displayed on browser tab -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div id="header">
+  <h1>Personnel - Open Database</h1>
+  </div>
+
+  <div id="buttons">
+    <p class="animate_button button_color"><%= link_to 'Home', controller: 'welcome' %></p>
+    <p class="animate_button button_color"><%= link_to 'List', controller: 'persons' %></p>
+    <p class="animate_button button_color"><%= link_to 'Create', new_person_path %></p>
+  </div>
+  
+  <div id="canvas">
+    <p class="text_format"> Current Submissions </p>
+    <table class="table_settings">
+        <tr>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Color</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Car Brand</th>
+            <th>Game</th>
+        </tr>
+        
+        <% @persons.each do |person| %>
+            <tr>
+                <td><%= person.name %></td>
+                <td><%= person.weight %></td>
+                <td><%= person.height %></td>
+                <td><%= person.color %></td>
+                <td><%= person.gender %></td>
+                <td><%= person.age %></td>
+                <td><%= person.car_brand %></td>
+                <td><%= person.game %></td>
+                <td><%= link_to 'Show', person_path(person) %></td>
+                <td><%= link_to 'Edit', edit_person_path(person) %></td>
+                <td><%= link_to 'Delete', person_path(person), method: :delete %></td>
+            </tr>
+            <% end %>
+    </table>
+    </div>
+    

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment 2</title> <!-- title to be displayed on browser tab -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div id="header">
+  <h1>Persons - An Open Database App</h1>
+  </div>
+
+  <div id="canvas">
+    <p class="text_format"> Introducing Persons </p>
+    <p class="text_format"> A database application </p>
+    <p class="text_format"> Click Below To Get Started </p>
+    <p class="text_format animate_button button_color"><%= link_to 'START', controller: 'persons' %></p>
+   
+</body>
+</html>
+

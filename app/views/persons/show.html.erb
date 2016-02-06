@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create</title> <!-- title to be displayed on browser tab -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div id="header">
+  <h1>Personnel - Open Database</h1>
+  </div>
+
+  <div id="buttons">
+    <p class="animate_button button_color"><%= link_to 'Home', controller: 'welcome' %></p>
+    <p class="animate_button button_color"><%= link_to 'List', controller: 'persons' %></p>
+    <p class="animate_button button_color"><%= link_to 'Create', new_person_path %></p>
+  </div>
+  
+  <div id="canvas">
+    <p class="text_format"> Latest Submisson </p>
+    <p class="form_text"> 
+        <strong>Name:</strong>
+        <%= @person.name %>
+    </p>
+    <p class="form_text"> 
+        <strong>Weight:</strong>
+        <%= @person.weight %>
+    </p>
+        <p class="form_text"> 
+        <strong>Height:</strong>
+        <%= @person.height %>
+    </p>
+    <p class="form_text"> 
+        <strong>Color:</strong>
+        <%= @person.color %>
+    </p>
+        <p class="form_text"> 
+        <strong>Gender:</strong>
+        <%= @person.gender %>
+    </p>
+    <p class="form_text"> 
+        <strong>Age:</strong>
+        <%= @person.age %>
+    </p>
+        <p class="form_text"> 
+        <strong>Car Brand:</strong>
+        <%= @person.car_brand %>
+    </p>
+    <p class="form_text"> 
+        <strong>Game:</strong>
+        <%= @person.game %>
+    </p>
+    

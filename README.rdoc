@@ -1,0 +1,18 @@
+== README
+
+Student Name: Jamie Singh
+Student Number: 301246612
+email: jvsingh@sfu.ca   
+
+List of Features Implemented:
+ - Ability to create new database entries
+ - Ability to edit database entries
+ - Ability to destroy database entries
+ - Ability to navigate between all buttons
+ - Implemented four additional attributes into database
+ 
+ Features Not Implemented
+ - Unable to implement display feature.
+ 
+ 
+ END
